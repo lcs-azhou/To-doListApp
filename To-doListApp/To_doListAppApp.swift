@@ -11,7 +11,7 @@ import SwiftUI
 struct To_doListAppApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            StaticInterface()
         }
     }
 }
