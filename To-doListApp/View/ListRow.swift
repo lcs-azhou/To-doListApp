@@ -9,7 +9,7 @@ import SwiftUI
 
 struct ToDoListView: View {
     
-    @Binding var currentItem: TodoItem
+    @Bindable var currentItem: TodoItem
     
     var body: some View {
         
