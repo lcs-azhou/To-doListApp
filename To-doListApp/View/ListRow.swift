@@ -9,22 +9,28 @@ import SwiftUI
 
 struct ToDoListView: View {
     
-    let currentItem: TodoItem
+    @Binding var currentItem: TodoItem
     
     var body: some View {
-        ZStack {
-            HStack {
+        
                 Label(title: {Text(currentItem.title)},
                       icon: {
                     Image(systemName: currentItem.done == true ? "checkmark.circle":"circle")
                     
-                })
-                    }
+                        .onTapGesture {
+                            currentItem.done.toggle()
+                        }
                     
-                }
+                })
+                    
+                    
+            
             }
 }
 
 #Preview {
-    ToDoListView(currentItem: firstItem)
+    List{
+        ToDoListView(currentItem: Binding.constant(firstItem))
+        ToDoListView(currentItem: Binding.constant(secondItem))
+    }
 }

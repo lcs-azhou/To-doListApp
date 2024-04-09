@@ -26,7 +26,7 @@ struct StaticInterface: View {
                 
                 List($todos) { $todo in
                     
-                    ToDoListView(currentItem: todo)
+                    ToDoListView(currentItem: $todo)
                     //Delete a to-do item
                         .swipeActions{
                             Button("Delete",
@@ -34,8 +34,6 @@ struct StaticInterface: View {
                                    action: {
                                 delete(todo)
                             })
-                        }.onTapGesture {
-                            todo.done.toggle()
                         }
                 }
                 .searchable(text: $searchText)
