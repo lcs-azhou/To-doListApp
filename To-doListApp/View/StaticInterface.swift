@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import SwiftData
 
 struct StaticInterface: View {
     //Mark: stored properties
@@ -14,6 +15,9 @@ struct StaticInterface: View {
     
     //The item currently being added
     @State var newItemDescription = ""
+    
+//    Access the model context (required to do additions,deletions,updates,et cetera)
+    @Environment(\.modelContext) var modelContext
     
     //The list of to-do list
     @State var todos: [TodoItem] = exampleItems
