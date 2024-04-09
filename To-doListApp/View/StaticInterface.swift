@@ -73,6 +73,6 @@ struct StaticInterface: View {
     }
 }
 
-#Preview {
-    StaticInterface()
-}
+//#Preview {
+//    StaticInterface()
+//}
